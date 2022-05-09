@@ -1,7 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css?family=ubuntu:ital');
+
+
 body {
     background: #fff;
     font-family: 'ubuntu', sans-serif;
