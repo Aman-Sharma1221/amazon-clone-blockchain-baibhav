@@ -1,9 +1,17 @@
-import Image from 'next/Image';
-import React from 'react'
+import React, { useContext } from 'react'
+import logo from '../assets/amazon_logo.png'
+import logoFull from '../assets/amazon_logo_full.png'
+import Image from 'next/image'
+import { FaBox } from 'react-icons/fa'
+import { BsFillBookmarkFill } from 'react-icons/bs'
+import { BsFillPersonFill } from 'react-icons/bs'
+import { AmazonContext } from '../context/AmazonContext'
 import { ConnectButton } from 'web3uikit'
+import { AiOutlineHistory } from 'react-icons/ai'
+import Link from 'next/link'
 
 const isAuthenticated = true
-const username = ''
+const username = 'baibhav'
 
 const Sidebar = () => {
     const styles = {
@@ -15,6 +23,7 @@ const Sidebar = () => {
         usernameInput: `bg-transparent border-white border-2 rounded-lg w-[80%] py-2 px-4 text-lg mt-[20px] placeholder:text-white focus:outline-none flex justify-center items-center text-white`,
         username: `flex items-center w-full justify-center`,
         setNickname: `text-lg font-bold flex flex-1 items-center mt-[20px] mb-[20px] text-white`,
+        companyName: `text-lg font-bold flex flex-1 pl-10 items-center mt-[20px]`,
     }
     return (
         <div className={styles.container}>
@@ -57,6 +66,44 @@ const Sidebar = () => {
                             )}
                         </>
                     )}
+                <div className={styles.ConnectButton}>
+                    <ConnectButton />
+                </div>
+            </div>
+            <div className={styles.menu}>
+                <link href='/'>
+                    <div className={styles.menuItem}>
+                        <Image
+                            src={logo}
+                            height={30}
+                            width={30}
+                            className={styles.amazonlogo}
+                        />
+                        My Amazon
+                        <br /> board
+                    </div>
+                </link>
+                <div className={styles.menuItem}>
+                    <FaBox />
+                    Collections
+                </div>
+                <div className={styles.menuItem}>
+                    <BsFillBookmarkFill />
+                    Saved
+                </div>
+                <div className={styles.menuItem}>
+                    <BsFillPersonFill />
+                    Saved
+                </div>
+                <link href='/history'>
+                    <div className={styles.menuItem}>
+                        <AiOutlineHistory />
+                        Transaction History
+                    </div>
+                </link>
+            </div>
+            <div className={styles.companyName}>
+                <Image src={logoFull} alt='amazon' height={100} width={100} />
             </div>
         </div>
     )
