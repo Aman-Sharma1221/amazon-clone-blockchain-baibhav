@@ -34,7 +34,6 @@ const Sidebar = () => {
         nickname,
         setNickname,
         username,
-        handleSetUsername,
     } = useContext(AmazonContext)
 
     return (
